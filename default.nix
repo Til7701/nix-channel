@@ -3,6 +3,7 @@
 {
   imports =[
     ./modules
-    ./packages
   ];
+
+  tilpkgs = ./packages;
 }

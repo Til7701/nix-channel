@@ -1,8 +1,10 @@
-{ config, pkgs ? import <nixpkgs> { }, ... }:
+{ lib, buildInputs ? [] }:
+
+with lib;
 
 {
-  imports =[
-    ./modules
-    ./packages
-  ];
+  modules = import ./modules { inherit buildInputs; };
+  packages = import ./packages { inherit buildInputs; };
+
+  fx-demo = packages.fx-demo;
 }

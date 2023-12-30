@@ -5,5 +5,5 @@
     ./modules
   ];
 
-  tilpkgs = import ./packages;
+  pkgs = import ./packages;
 }

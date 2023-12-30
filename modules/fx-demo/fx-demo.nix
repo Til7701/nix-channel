@@ -5,6 +5,7 @@ in
 , fetchurl ? pkgs.fetchurl
 , makeWrapper ? pkgs.makeWrapper
 , jre ? pkgs.jre
+, makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {
@@ -28,5 +29,15 @@ stdenv.mkDerivation rec {
     --add-flags "-jar $out/share/java/${pname}.jar" \
     --set _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=on' \
     --set _JAVA_AWT_WM_NONREPARENTING 1
+
+    ln -s "$desktopItem/share/applications" $out/share/
   '';
+
+  desktopItem = makeDesktopItem {
+      name = "fx-demo";
+      exec = "fx-demo";
+      icon = "fx-demo";
+      desktopName = "fx-demo";
+      genericName = "Demo";
+    };
 }

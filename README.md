@@ -25,4 +25,9 @@ You might want ot use a nix-shell. Better options might be available.
 
 ## Modules
 ### fx-demo
-
+- In your `configuration.nix`: 
+   ``` nix
+   til7701 = {
+      fx-demo.enable = true;
+   };
+   ```

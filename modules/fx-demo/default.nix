@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, tilpkgs, ... }:
 
 let
   cfg = config.til7701.fx-demo;
@@ -10,7 +10,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.fx-demo
+      tilpkgs.fx-demo
     ];
   };
 

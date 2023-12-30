@@ -10,7 +10,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.fx-demo
+      tilpkgs.fx-demo
     ];
   };
 

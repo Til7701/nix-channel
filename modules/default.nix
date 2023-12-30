@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./modules
+    ./fx-demo
   ];
-
-  tilpkgs = ./packages;
 }

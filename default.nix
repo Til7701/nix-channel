@@ -1,8 +1,6 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 
 {
-  imports = [
-    ./modules
-    ./packages
-  ];
+  modules = import ./modules {};
+  packages = import ./packages {};
 }

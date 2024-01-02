@@ -1,8 +1,6 @@
 { config, lib, buildInputs ? [], ... }:
 
-with lib;
-
-mkDerivation {
+lib.mkDerivation {
   name = "til7701";
   buildInputs = buildInputs;
 

@@ -1,10 +1,8 @@
-{ config, stdenv, lib, buildInputs ? [], ... }:
+{ stdenv, ... }:
 
 stdenv.mkDerivation {
   name = "til7701";
-  inherit buildInputs;
-  inherit stdenv;
 
-  modules = import ./modules { inherit lib; };
-  packages = import ./packages { inherit lib; };
+  modules = import ./modules {};
+  packages = import ./packages {};
 }

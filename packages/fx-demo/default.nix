@@ -1,12 +1,4 @@
-let
-  pkgs = import <nixpkgs> {};
-in
-{ stdenv
-, fetchurl ? pkgs.fetchurl
-, makeWrapper ? pkgs.makeWrapper
-, jre ? pkgs.jre
-, makeDesktopItem
-}:
+{ stdenv, fetchurl, makeWrapper, jre, makeDesktopItem }:
 
 stdenv.mkDerivation rec {
   pname = "fx-demo-linux";
@@ -34,10 +26,10 @@ stdenv.mkDerivation rec {
   '';
 
   desktopItem = makeDesktopItem {
-      name = "fx-demo";
-      exec = "fx-demo";
-      icon = "fx-demo";
-      desktopName = "fx-demo";
-      genericName = "Demo";
-    };
+    name = "fx-demo";
+    exec = "fx-demo";
+    icon = "fx-demo";
+    desktopName = "fx-demo";
+    genericName = "Demo";
+  };
 }

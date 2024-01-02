@@ -1,7 +1,7 @@
 let
   pkgs = import <nixpkgs> {};
 in
-{ stdenv ? pkgs.stdenv
+{ stdenv
 , fetchurl ? pkgs.fetchurl
 , makeWrapper ? pkgs.makeWrapper
 , jre ? pkgs.jre

@@ -1,4 +1,4 @@
-{ config, lib, buildInputs ? [], ... }:
+{ config, stdenv, lib, buildInputs ? [], ... }:
 
 stdenv.mkDerivation {
   name = "til7701";

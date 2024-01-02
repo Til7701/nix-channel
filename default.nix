@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation {
   name = "til7701";
-  buildInputs = buildInputs;
+  inherit buildInputs;
 
   modules = import ./modules { inherit lib; };
   packages = import ./packages { inherit lib; };

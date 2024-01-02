@@ -1,4 +1,4 @@
-{ config, lib, buildInputs ? [] }:
+{ config, options, lib, buildInputs ? [] }:
 
 with lib;
 

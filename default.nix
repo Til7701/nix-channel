@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs ? import <nixpkgs> {}, ... }:
 
 {
   modules = import ./modules {};

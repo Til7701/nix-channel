@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   fx-demo = pkgs.callPackage ./fx-demo {};

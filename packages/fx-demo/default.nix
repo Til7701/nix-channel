@@ -1,11 +1,12 @@
 let
   pkgs = import <nixpkgs> {};
 in
-{ stdenv ? pkgs.stdenv
-, fetchurl ? pkgs.fetchurl
-, makeWrapper ? pkgs.makeWrapper
-, jre ? pkgs.jre
-, makeDesktopItem
+{
+stdenv ? pkgs.stdenv,
+fetchurl ? pkgs.fetchurl,
+makeWrapper ? pkgs.makeWrapper,
+jre ? pkgs.jre,
+makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {

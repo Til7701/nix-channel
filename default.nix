@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ lib, buildInputs ? [] }:
 
-let
-  tilpkgs = import ./packages;
-in {
-  imports = [
-    ./modules
-  ];
+with lib;
+
+mkDerivation {
+  name = "til7701";
+  buildInputs = buildInputs;
+
+  modules = import ./modules { inherit lib; };
+  packages = import ./packages { inherit lib; };
 }

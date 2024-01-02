@@ -6,7 +6,7 @@ stdenv ? pkgs.stdenv,
 fetchurl ? pkgs.fetchurl,
 makeWrapper ? pkgs.makeWrapper,
 jre ? pkgs.jre,
-makeDesktopItem
+makeDesktopItem ? pkgs.makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {

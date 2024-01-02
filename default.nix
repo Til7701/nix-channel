@@ -1,6 +1,6 @@
 { config, lib, buildInputs ? [], ... }:
 
-lib.mkDerivation {
+stdenv.mkDerivation {
   name = "til7701";
   buildInputs = buildInputs;
 

@@ -2,7 +2,7 @@
 
 let
   cfg = config.til7701.fx-demo;
-  fx-demo = pkgs.callPackage /packages/fx-demo {};
+  fx-demo = pkgs.callPackage ../../packages/fx-demo {};
 in {
 
   options.til7701.fx-demo = {

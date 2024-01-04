@@ -10,12 +10,12 @@ makeDesktopItem ? pkgs.makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {
-  pname = "fx-demo-linux";
+  pname = "fx-demo";
   version = "0.0.1";
 
   src = fetchurl {
-    url = "https://github.com/Til7701/javafx-native-image-sample/releases/tag/fat-jar/download/fx-demo-linux.jar";
-    hash = "sha256-3e6zyXsTYPnzl05WGDSDbb8cNV9bwhrvv2SuvKhinXw=";
+    url = "https://github.com/Til7701/javafx-native-image-sample/releases/tag/jar/download/fx-demo-ubuntu-latest.jar";
+    hash = "sha256-WOM5mDd0dLhnw4X2fssMusUQ0BcBLKjAMuTYVhW6uS8=";
   };
 
   dontUnpack = true;

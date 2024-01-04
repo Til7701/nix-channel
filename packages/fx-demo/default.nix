@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     --set _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=on' \
     --set _JAVA_AWT_WM_NONREPARENTING 1
 
-  ln -s "$desktopItem/share/applications" $out/share/
+  ln -sv "$desktopItem/share/applications" $out/share/
   '';
 
   desktopItem = makeDesktopItem {

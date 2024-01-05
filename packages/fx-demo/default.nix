@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     url = "https://github.com/Til7701/javafx-native-image-sample/releases/download/jar/fx-demo_ubuntu-latest.jar";
     hash = "sha256-G+UwJod/PU3hExNlafcbD2DAo74xxKIPXmcSblS87w0=";
   };
-  icons = ./icons;
+  icon = ./icon;
 
   dontUnpack = true;
 
@@ -33,12 +33,14 @@ stdenv.mkDerivation rec {
     --set _JAVA_AWT_WM_NONREPARENTING 1
 
   ln -sv "$desktopItem/share/applications" $out/share/
+  mkdir -v $out/share/pixmaps
+  ln -sv "$icon/fx-demo.png" $out/share/pixmaps
   '';
 
   desktopItem = makeDesktopItem {
     name = "PublicDemoName";
     exec = "fx-demo";
-    icon = "${icons}/fx-demo.png";
+    icon = "fx-demo";
     desktopName = "PublicDemoName2";
     genericName = "Demo";
   };

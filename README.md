@@ -1,6 +1,9 @@
 # Til7701 Nix Channel
 This repository contains a collection of modules, which can be included into your nix configuration.
 
+> Note: Everything is tested on one single user system. The packages should work regardless, but the modules might not
+> work for you.
+
 ## Usage
 - add the channel: `sudo nix-channel --add https://github.com/Til7701/nix-channel/archive/main.tar.gz til7701`
 

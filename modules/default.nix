@@ -3,5 +3,6 @@
 {
   imports = [
     ./fx-demo
+    ./noel
   ];
 }

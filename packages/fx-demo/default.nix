@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/Til7701/javafx-native-image-sample/releases/download/jar/fx-demo_ubuntu-latest.jar";
-    hash = "sha256-G+UwJod/PU3hExNlafcbD2DAo74xxKIPXmcSblS87w0=";
+    hash = "sha256-H9g4vS0R+Tqrpyga4Z0uTTAsnHpkkpT3Z/I0j/zjXyc=";
   };
   icon = ./icon;
 

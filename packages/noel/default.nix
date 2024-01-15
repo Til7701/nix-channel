@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/Til7701/NoEl/releases/download/${version}/noel-linux.jar";
-    hash = "sha256-G+UwJod/PU3hExNlafcbD2DAo74xxKIPXmcSblS87w0=";
+    hash = "sha256-tjEaCO7aQrQwYaq27KbX4xvLq/67XTyMyo//vIi65DY=";
   };
   icon = ./icon;
 

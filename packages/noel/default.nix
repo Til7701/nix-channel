@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
 
   desktopItem = makeDesktopItem {
     name = "NoEl";
-    exec = "noel";
+    exec = "noel %f";
     icon = "noel";
     desktopName = "NoEl";
   };

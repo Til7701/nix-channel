@@ -34,8 +34,6 @@ TODO
 
 ## Modules
 ### fx-demo
-[![fx-demo package build state](https://github.com/Til7701/nix-channel/actions/workflows/fx-demo-package-build.yaml/badge.svg)](https://github.com/Til7701/nix-channel/actions/workflows/fx-demo-package-build.yaml)
-
 Provides the package [fx-demo](#fx-demo-1).
 - In your `configuration.nix`: 
    ``` nix
@@ -44,7 +42,23 @@ Provides the package [fx-demo](#fx-demo-1).
    };
    ```
 
+### NoEl
+Provides the package [NoEl](#noel-1).
+- In your `configuration.nix`: 
+   ``` nix
+   til7701 = {
+      noel.enable = true;
+   };
+   ```
+
 ## Packages
 ### fx-demo
+[![fx-demo package build state](https://github.com/Til7701/nix-channel/actions/workflows/fx-demo-package-build.yaml/badge.svg)](https://github.com/Til7701/nix-channel/actions/workflows/fx-demo-package-build.yaml)
+
 fx-demo is a sample project to show how a JavaFX project can be built into native binaries. It can be found 
 [here](https://github.com/Til7701/javafx-native-image-sample).
+
+### NoEl
+[![NoEl package build](https://github.com/Til7701/nix-channel/actions/workflows/noel-package-build.yaml/badge.svg)](https://github.com/Til7701/nix-channel/actions/workflows/noel-package-build.yaml)
+
+A text editor: [Til7701/NoEl](https://github.com/Til7701/NoEl)

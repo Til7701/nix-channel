@@ -5,7 +5,7 @@ in
 stdenv ? pkgs.stdenv,
 fetchurl ? pkgs.fetchurl,
 makeWrapper ? pkgs.makeWrapper,
-jre ? pkgs.jdk21,
+jdk21 ? pkgs.jdk21,
 makeDesktopItem ? pkgs.makeDesktopItem
 }:
 
@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
   mkdir -pv $out/share/java $out/bin
   cp ${src} $out/share/java/${pname}.jar
 
-  makeWrapper ${jre}/bin/java $out/bin/noel \
+  makeWrapper ${jdk21}/bin/java $out/bin/noel \
     --add-flags "-jar $out/share/java/${pname}.jar" \
     --set _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=on' \
     --set _JAVA_AWT_WM_NONREPARENTING 1

@@ -1,0 +1,16 @@
+name: "channel usage test"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: |
+          nix-channel --add https://github.com/Til7701/nix-channel/archive/main.tar.gz til7701
+          nix-channel --update
+          nix-env

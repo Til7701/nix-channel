@@ -5,17 +5,17 @@ in
 stdenv ? pkgs.stdenv,
 fetchurl ? pkgs.fetchurl,
 makeWrapper ? pkgs.makeWrapper,
-jre ? pkgs.jre,
+jre ? pkgs.jdk21,
 makeDesktopItem ? pkgs.makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {
   pname = "noel";
-  version = "0.1";
+  version = "0.2";
 
   src = fetchurl {
     url = "https://github.com/Til7701/NoEl/releases/download/${version}/noel-linux.jar";
-    hash = "sha256-tjEaCO7aQrQwYaq27KbX4xvLq/67XTyMyo//vIi65DY=";
+    hash = "sha256-jcWx8Dt0lk8UgMcypSqwi2h0XFvXZhpRrQ7kOQGLXs0=";
   };
   icon = ./icon;
 

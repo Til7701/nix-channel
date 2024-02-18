@@ -1,12 +1,11 @@
 let
-  pkgs = import <nixpkgs> {};
+  pkgs = import <nixpkgs> { };
 in
-{
-stdenv ? pkgs.stdenv,
-fetchurl ? pkgs.fetchurl,
-makeWrapper ? pkgs.makeWrapper,
-jre ? pkgs.jre,
-makeDesktopItem ? pkgs.makeDesktopItem
+{ stdenv ? pkgs.stdenv
+, fetchurl ? pkgs.fetchurl
+, makeWrapper ? pkgs.makeWrapper
+, jre ? pkgs.jre
+, makeDesktopItem ? pkgs.makeDesktopItem
 }:
 
 stdenv.mkDerivation rec {
@@ -15,7 +14,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/Til7701/javafx-native-image-sample/releases/download/jar/fx-demo_ubuntu-latest.jar";
-    hash = "sha256-H9g4vS0R+Tqrpyga4Z0uTTAsnHpkkpT3Z/I0j/zjXyc=";
+    hash = "sha256-6GGWuFNqgfMA/Jg/vqQ9lVTKRB5Ct6o7ugXa5dwhP5s=";
   };
   icon = ./icon;
 
@@ -24,17 +23,17 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
-  mkdir -pv $out/share/java $out/bin
-  cp ${src} $out/share/java/${pname}.jar
+    mkdir -pv $out/share/java $out/bin
+    cp ${src} $out/share/java/${pname}.jar
 
-  makeWrapper ${jre}/bin/java $out/bin/fx-demo \
-    --add-flags "-jar $out/share/java/${pname}.jar" \
-    --set _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=on' \
-    --set _JAVA_AWT_WM_NONREPARENTING 1
+    makeWrapper ${jre}/bin/java $out/bin/fx-demo \
+      --add-flags "-jar $out/share/java/${pname}.jar" \
+      --set _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=on' \
+      --set _JAVA_AWT_WM_NONREPARENTING 1
 
-  ln -sv "$desktopItem/share/applications" $out/share/
-  mkdir -v $out/share/pixmaps
-  ln -sv "$icon/fx-demo.png" $out/share/pixmaps
+    ln -sv "$desktopItem/share/applications" $out/share/
+    mkdir -v $out/share/pixmaps
+    ln -sv "$icon/fx-demo.png" $out/share/pixmaps
   '';
 
   desktopItem = makeDesktopItem {

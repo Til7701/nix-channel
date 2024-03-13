@@ -2,8 +2,9 @@
 
 let
   cfg = config.til7701.fx-demo;
-  fx-demo = pkgs.callPackage ../../packages/fx-demo {};
-in {
+  fx-demo = pkgs.callPackage ../packages/fx-demo { };
+in
+{
 
   options.til7701.fx-demo = {
     enable = lib.mkEnableOption "fx-demo";

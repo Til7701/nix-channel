@@ -1,10 +1,10 @@
 { pkgs ? import <nixpkgs> { }, ... }:
 
-let
+{
   imports = [
     ./modules
   ];
 
-  tilpkgs = import ./packages;
-in
-tilpkgs
+  fx-demo = pkgs.callPackage ./packages/fx-demo { };
+  noel = pkgs.callPackage ./packages/noel { };
+}

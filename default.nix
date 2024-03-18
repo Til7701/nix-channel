@@ -1,9 +1,8 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> { }, ... }:
 
 {
   imports = [
     ./modules
+    ./packages
   ];
-
-  packages = import ./packages {};
 }

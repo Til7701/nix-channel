@@ -1,8 +1,10 @@
 { pkgs ? import <nixpkgs> { }, ... }:
 
-{
+let
   imports = [
     ./modules
-    ./packages
   ];
-}
+
+  tilpkgs = import ./packages;
+in
+tilpkgs

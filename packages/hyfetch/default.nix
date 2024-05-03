@@ -1,7 +1,10 @@
 # copied from nixpkgs to use fork
-{ lib
-, fetchFromGitHub
-, python3
+let
+  pkgs = import <nixpkgs> { };
+in
+{ lib ? pkgs.lib
+, fetchFromGitHub ? pkgs.fetchFromGitHub
+, python3 ? pkgs.python3
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -12,8 +15,8 @@ python3.pkgs.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "Til7701";
     repo = "hyfetch";
-    rev = "refs/tags/test";
-    hash = "";
+    rev = "a4c0fdc921ca826c7ea1157bf6eaf95eebc3ddc6";
+    hash = "sha256-8/kn7AGnq97uQsbeRBuf9khmZBWcvnom7iANpFieEts=";
   };
 
   propagatedBuildInputs = with python3.pkgs; [

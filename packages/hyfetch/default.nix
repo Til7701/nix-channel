@@ -15,8 +15,8 @@ python3.pkgs.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "Til7701";
     repo = "hyfetch";
-    rev = "6a1ba72df95376265525669231a4126a78a88020";
-    hash = "sha256-Gfko1Ia4lo9GC4OGY4+AEhJm21wyRQrb54W7lYWKGvc=";
+    rev = "270334a38503db32022a44d5222f4dea22640137";
+    hash = "sha256-yu4uEuy7UU2M89RNUoMyYWp9+g60ysJ/dnMKEoBsbuA=";
   };
 
   propagatedBuildInputs = with python3.pkgs; [
